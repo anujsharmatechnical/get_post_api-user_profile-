@@ -9,22 +9,12 @@ var Userschema = mongoose.Schema({
     email:{
         type:String
     },
-    profile:{
-        type:String
-
-    },
-    location:{
-        type:String
-    },
-    password:{
+     password:{
         type:String,
         require:true
 
-    },
-    file:{
-      type:String,
-    },
-    saltstring:String
+    }
+   
 })
 Userschema.pre('save',function(next){
     bcrypt.genSalt(10,(err,salt)=>{
